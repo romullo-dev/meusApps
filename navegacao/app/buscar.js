@@ -1,27 +1,28 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, ImageBackground } from 'react-native';
-import Label from '../components/Label'; 
-import Botao from '../components/Botao'; 
+import Label from '../components/Label';
+import Botao from '../components/Botao';
 
 
-const Index = () => {
+
+const Buscar = () => {
   return (
     <ImageBackground source={require('../assets/Telafundo.jpg')}
       style={styles.imagem}>
 
-        <View style={styles.styleLabel}>
-          <Label Label = 'Home'/>
-        </View>
-        <View style={styles.styleBotao}>
-          <Label Botao = 'Buscar usuario'/>
-        </View>
+      <View style={styles.styleLabel}>
+        <Label Label='Buscar Usuário' />
+      </View>
+      <View style={styles.styleBotao}>
+        <Botao texto='Voltar' caminho="" />
+      </View>
       <StatusBar style="auto" />
     </ImageBackground>
 
   );
 };
 
-export default Index;
+export default Buscar;
 
 const styles = StyleSheet.create({
   container: {
@@ -35,9 +36,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  styleLabel : {
+  styleLabel: {
 
   },
-  styleBotao :{
+  styleBotao: {
 
-  }});
+  }
+});
