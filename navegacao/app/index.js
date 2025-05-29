@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, ImageBackground } from 'react-native';
-import Label from '../components/Label'; 
-import Botao from '../components/Botao'; 
+import Label from '../components/Label';
+import Botao from '../components/Botao';
 
 
 
@@ -10,14 +10,23 @@ const Index = () => {
     <ImageBackground source={require('../assets/Telafundo.jpg')}
       style={styles.imagem}>
 
+      <View style={styles.container}>
+
         <View style={styles.styleLabel}>
-          <Label Label = 'Home'/>
+          <Label Label='Home' />
         </View>
         <View style={styles.styleBotao}>
-          <Botao texto = 'BUSCAR USUÁRIO' caminho = "buscar" />
-          <Botao texto = 'CADASTRAR USUÁRIO' caminho = "cadastro" />
+          <Botao  texto='BUSCAR USUÁRIO' caminho="buscar" />
+          <Botao texto='CADASTRAR USUÁRIO' caminho="cadastro" />
+          <Botao texto='CADASTRAR USUÁRIO' caminho="cadastro" />
+          <Botao texto='CADASTRAR USUÁRIO' caminho="cadastro" />
+
         </View>
-       
+
+      </View>
+
+
+
       <StatusBar style="auto" />
     </ImageBackground>
 
@@ -28,19 +37,26 @@ export default Index;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'black',
     alignItems: 'center',
-    justifyContent: 'center',
+    gap : 20,
+    padding : 60,
   },
   imagem: {
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
-  },
-  styleLabel : {
+    justifyContent: 'center',
+    gap: 0,
+
 
   },
-  styleBotao :{
+  styleLabel: {
 
-  }});
+
+  },
+  styleBotao: {
+    gap: 25,
+
+
+  }
+});

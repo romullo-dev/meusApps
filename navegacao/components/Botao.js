@@ -10,7 +10,7 @@ const Botao =({texto, caminho}) => {
 
     <>
     <Button 
-    style={styles.Botao} 
+    style={styles.Botao_2} 
     title={texto}  
     onPress={() => router.push (`/${caminho}`) }
 
@@ -28,9 +28,11 @@ const Botao =({texto, caminho}) => {
 export default Botao;
 
 const styles = StyleSheet.create({
-  Botao: {
+  Botao_2: {
     width : 50,
     height : 50,
+
+    borderRadius : 100,
 
     
   },
