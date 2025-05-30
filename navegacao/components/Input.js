@@ -3,31 +3,40 @@ import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 
-const Input  =({tag}) => {
+const Input = ({ tag }) => {
 
-    return (
+  return (
 
     <>
 
-    <TextInput 
-    placeholder={tag}>
+      <TextInput
+        style={styles.tag}
 
-    </TextInput>
-    
+        placeholder={tag}>
+
+      </TextInput>
+
 
 
     </>
-    
+
   );
 };
 
 export default Input;
 
 const styles = StyleSheet.create({
-  Botao: {
-    width : 50,
-    height : 50,
+  tag: {
+    width: 290,
+    height: 50,
+    backgroundColor: '#dee2e6',
 
-    
+
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 30,
+
+
+
   },
 });

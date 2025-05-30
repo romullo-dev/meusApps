@@ -37,9 +37,9 @@ export default Index;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'black',
+    backgroundColor: 'null',
     alignItems: 'center',
-    gap : 20,
+    gap : 30,
     padding : 60,
   },
   imagem: {

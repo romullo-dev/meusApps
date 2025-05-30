@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { useRouter } from 'expo-router'; 
 
@@ -9,16 +9,12 @@ const Botao =({texto, caminho}) => {
   return (
 
     <>
-    <Button 
-    style={styles.Botao_2} 
-    title={texto}  
-    onPress={() => router.push (`/${caminho}`) }
-
-    
-    
-
-    
-    />  
+   <TouchableOpacity 
+      style={styles.botao} 
+      onPress={() => router.push(`/${caminho}`)}
+    >
+      <Text style={styles.texto}>{texto}</Text>
+    </TouchableOpacity>
 
     </>
     
@@ -28,12 +24,13 @@ const Botao =({texto, caminho}) => {
 export default Botao;
 
 const styles = StyleSheet.create({
-  Botao_2: {
-    width : 50,
+  botao: {
+    width : 290,
     height : 50,
-
-    borderRadius : 100,
-
-    
+    backgroundColor: '#dee2e6',
+    borderColor : 'green',
+    alignItems : 'center',
+    justifyContent : 'center', 
+    borderRadius : 30,
   },
 });

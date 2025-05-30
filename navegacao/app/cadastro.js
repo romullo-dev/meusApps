@@ -12,6 +12,7 @@ const cadastro = () => {
     <ImageBackground source={require('../assets/Telafundo.jpg')}
       style={styles.imagem}>
 
+<View style={styles.container}>
       <View style={styles.styleLabel}>
         <Label Label='Cadastrar Usuário' />
       </View>
@@ -33,6 +34,10 @@ const cadastro = () => {
       <View style={styles.styleBotao}>
         <Botao texto='CADASTRAR' caminho="" />
       </View>
+
+</View>
+
+    
       <StatusBar style="auto" />
     </ImageBackground>
 
@@ -43,15 +48,17 @@ export default cadastro;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+      backgroundColor: 'null',
+      alignItems: 'center',
+      gap : 30,
+      padding : 60,
+    
   },
   imagem: {
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
+    justifyContent: 'center',
+    gap: 0,
   },
   styleLabel: {
 
