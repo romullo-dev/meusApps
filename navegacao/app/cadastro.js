@@ -12,32 +12,32 @@ const cadastro = () => {
     <ImageBackground source={require('../assets/Telafundo.jpg')}
       style={styles.imagem}>
 
-<View style={styles.container}>
-      <View style={styles.styleLabel}>
-        <Label Label='Cadastrar Usuário' />
-      </View>
-      <View style={styles.Imput}>
-        <Input tag='Email' />
-      </View>
-      <View style={styles.Imput}>
-        <Input tag='Nome de usuario' />
-      </View>
-      <View style={styles.Imput}>
-        <Input tag='Telefone' />
-      </View>
-      <View style={styles.Imput}>
-        <Input tag='CPF' />
-      </View>
-      <View style={styles.Imput}>
-        <Input tag='Senha' />
-      </View>
-      <View style={styles.styleBotao}>
-        <Botao texto='CADASTRAR' caminho="" />
+      <View style={styles.container}>
+        <View style={styles.styleLabel}>
+          <Label Label='Cadastrar Usuário' />
+        </View>
+        <View style={styles.Imput}>
+          <Input tag='Email' />
+        </View>
+        <View style={styles.Imput}>
+          <Input tag='Nome de usuario' />
+        </View>
+        <View style={styles.Imput}>
+          <Input tag='Telefone' />
+        </View>
+        <View style={styles.Imput}>
+          <Input tag='CPF' />
+        </View>
+        <View style={styles.Imput}>
+          <Input tag='Senha' />
+        </View>
+        <View style={styles.styleBotao}>
+          <Botao texto='CADASTRAR' caminho="" />
+        </View>
+
       </View>
 
-</View>
 
-    
       <StatusBar style="auto" />
     </ImageBackground>
 
@@ -48,11 +48,11 @@ export default cadastro;
 
 const styles = StyleSheet.create({
   container: {
-      backgroundColor: 'null',
-      alignItems: 'center',
-      gap : 30,
-      padding : 60,
-    
+    backgroundColor: 'null',
+    alignItems: 'center',
+    gap: 30,
+    padding: 60,
+
   },
   imagem: {
     flex: 1,

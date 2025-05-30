@@ -14,7 +14,7 @@ const Buscar = () => {
 
 <View style={styles.container}>
 <View style={styles.styleLabel}>
-        <Label Label='Buscar Usuário' />
+        <Label Label='Excluir Usuário' />
       </View>
       <View style={styles.Imput}>
         <Input tag='Nome' />
@@ -23,7 +23,7 @@ const Buscar = () => {
         <Input tag='CPF' />
       </View>
       <View style={styles.styleBotao}>
-        <Botao texto='Buscar' caminho="" />
+        <Botao texto='Escluir' caminho="" />
       </View>
 
 </View>

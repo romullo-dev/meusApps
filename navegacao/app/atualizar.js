@@ -7,23 +7,29 @@ import Input from '../components/Input';
 
 
 
-const Buscar = () => {
+const cadastro = () => {
   return (
-    <ImageBackground  source={require('../assets/Telafundo.jpg')}
+    <ImageBackground source={require('../assets/Telafundo.jpg')}
       style={styles.imagem}>
 
 <View style={styles.container}>
-<View style={styles.styleLabel}>
-        <Label Label='Buscar Usuário' />
+      <View style={styles.styleLabel}>
+        <Label Label='Atualizar dados' />
       </View>
       <View style={styles.Imput}>
-        <Input tag='Nome' />
+        <Input tag='Email' />
       </View>
       <View style={styles.Imput}>
-        <Input tag='CPF' />
+        <Input tag='Nome de usuario' />
+      </View>
+      <View style={styles.Imput}>
+        <Input tag='Telefone' />
+      </View>
+      <View style={styles.Imput}>
+        <Input tag='Senha' />
       </View>
       <View style={styles.styleBotao}>
-        <Botao texto='Buscar' caminho="" />
+        <Botao texto='GRAVAR' caminho="" />
       </View>
 
 </View>
@@ -35,21 +41,21 @@ const Buscar = () => {
   );
 };
 
-export default Buscar;
+export default cadastro;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'null',
-    alignItems: 'center',
-    gap : 30,
-    padding : 60,
-  
-},
+      backgroundColor: 'null',
+      alignItems: 'center',
+      gap : 30,
+      padding : 60,
+    
+  },
   imagem: {
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
-    
+    justifyContent: 'center',
+    gap: 0,
   },
   styleLabel: {
 

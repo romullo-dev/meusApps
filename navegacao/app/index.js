@@ -18,8 +18,8 @@ const Index = () => {
         <View style={styles.styleBotao}>
           <Botao  texto='BUSCAR USUÁRIO' caminho="buscar" />
           <Botao texto='CADASTRAR USUÁRIO' caminho="cadastro" />
-          <Botao texto='CADASTRAR USUÁRIO' caminho="cadastro" />
-          <Botao texto='CADASTRAR USUÁRIO' caminho="cadastro" />
+          <Botao texto='ATUALIZAR USUÁRIO' caminho="atualizar" />
+          <Botao texto='EXCLUIR USUÁRIO' caminho="excluir" />
 
         </View>
 

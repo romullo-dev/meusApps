@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 
+
 const Input = ({ tag }) => {
 
   return (
@@ -13,6 +14,9 @@ const Input = ({ tag }) => {
         style={styles.tag}
 
         placeholder={tag}>
+
+
+          
 
       </TextInput>
 
