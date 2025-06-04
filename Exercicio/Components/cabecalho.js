@@ -1,22 +1,20 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View } from "react-native";
 
-
- const Cabecalho = ({titulo}) => {
-  return (
-    <>
-      <Text style={styles.titulo}>{titulo}</Text>
-    </>
-  );
-}
-
+const Cabecalho = ({titulo}) => {
+    return(
+        <>
+            <Text style={styles.texto}>{titulo}</Text>
+        </>
+    );
+};
 
 const styles = StyleSheet.create({
-  titulo: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    texto: {
+        fontSize: 25,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
 });
 
-export default Cabecalho
+export default Cabecalho;
