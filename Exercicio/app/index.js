@@ -6,35 +6,72 @@ import { useRouter } from 'expo-router';
 
 
 export default function App() {
-    const [nome, setNome] = useState();
-    const rota = useRouter();
+  const [nome, setNome] = useState('');
+  const rota = useRouter();
+
   return (
     <View style={styles.container}>
-        <Cabecalho titulo="MATEMÁTICA BÁSICA"/>
-        <Text>NOME:</Text>
-        <TextInput
-            placeholder="Digite seu nome: "
-            value={nome}
-            onChangeText={setNome}
-        />
-        <Button title="+" onPress={()=>rota.push({
-            pathname:"/operacao",
-            params:{ op: "+", pessoa: `${nome}`},
-        })} />
-        <Button title="-" onPress={()=>rota.push({
-            pathname:"/operacao",
-            params:{ op: "-", pessoa: `${nome}`},
-        })} />
-        <Button title="*" onPress={()=>rota.push({
-            pathname:"/operacao",
-            params:{ op: "*", pessoa: `${nome}`},
-        })} />
-        <Button title="/" onPress={()=>rota.push({
-            pathname:"/operacao",
-            params:{ op: "/", pessoa: `${nome}`},
-        })} />
-        
-        <StatusBar style="auto" />
+      <Cabecalho titulo="MATEMÁTICA BÁSICA" />
+
+      <Text style={styles.label}>NOME:</Text>
+      <TextInput
+        style={styles.input}
+        placeholder="Digite seu nome"
+        value={nome}
+        onChangeText={setNome}
+      />
+
+      <View style={styles.botoes}>
+        <View style={styles.botao}>
+          <Button
+            title="+"
+            onPress={() =>
+              rota.push({
+                pathname: '/operacao',
+                params: { op: '+', pessoa: nome },
+              })
+            }
+          />
+        </View>
+
+        <View style={styles.botao}>
+          <Button
+            title="-"
+            onPress={() =>
+              rota.push({
+                pathname: '/operacao',
+                params: { op: '-', pessoa: nome },
+              })
+            }
+          />
+        </View>
+
+        <View style={styles.botao}>
+          <Button
+            title="*"
+            onPress={() =>
+              rota.push({
+                pathname: '/operacao',
+                params: { op: '*', pessoa: nome },
+              })
+            }
+          />
+        </View>
+
+        <View style={styles.botao}>
+          <Button
+            title="/"
+            onPress={() =>
+              rota.push({
+                pathname: '/operacao',
+                params: { op: '/', pessoa: nome },
+              })
+            }
+          />
+        </View>
+      </View>
+
+      <StatusBar style="auto" />
     </View>
   );
 }
@@ -42,8 +79,37 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#F4F4F4',
     alignItems: 'center',
     justifyContent: 'center',
+    padding: 20,
+    gap : 70,
+  },
+  label: {
+    fontSize: 18,
+    marginBottom: 8,
+    color: '#333',
+    fontWeight: '600',
+  },
+  input: {
+    width: '80%',
+    borderWidth: 1,
+    borderColor: '#ccc',
+    backgroundColor: '#fff',
+    borderRadius: 8,
+    paddingHorizontal: 12,
+    paddingVertical: 10,
+    marginBottom: 20,
+    fontSize: 16,
+  },
+  botoes: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    gap: 12, 
+  },
+  botao: {
+    margin: 6,
+    width: 70,
   },
 });

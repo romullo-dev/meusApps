@@ -6,36 +6,40 @@ import { useState } from 'react';
 import { useRouter } from 'expo-router';
 
 export default function App() {
-    const {op, pessoa} = useLocalSearchParams(); // quando chamamos variáveis de outro lugar usamos chaves
-    const [n1, setN1] = useState(); //quando criamos variáveis locais usamos o colchetes
-    const [n2, setN2] = useState();
-    const rota = useRouter();
+  const { op, pessoa } = useLocalSearchParams(); // quando chamamos variáveis de outro lugar usamos chaves
+  const [n1, setN1] = useState(); //quando criamos variáveis locais usamos o colchetes
+  const [n2, setN2] = useState();
+  const rota = useRouter();
 
   return (
     <View style={styles.container}>
-      <Cabecalho titulo="MATEMÁTICA BÁSICA"/>
+      <Cabecalho titulo="MATEMÁTICA BÁSICA" />
       <Text>Operação: {op}</Text>
       <TextInput
+        style={styles.input}
+
         placeholder='Digite o número 1:'
         value={n1}
         onChangeText={setN1}
       />
       <TextInput
+        style={styles.input}
+
         placeholder='Digite o número 2:'
         value={n2}
         onChangeText={setN2}
       />
-      <Button title="calcular" onPress={()=>rota.push({
-            pathname:"/resultado",
-            params:{ 
-                op: `${op}`, 
-                pessoa: `${pessoa}`, 
-                n1: `${n1}`, 
-                n2: `${n2}`,
-            },
-        })
-    } 
-/>
+      <Button title="calcular" onPress={() => rota.push({
+        pathname: "/resultado",
+        params: {
+          op: `${op}`,
+          pessoa: `${pessoa}`,
+          n1: `${n1}`,
+          n2: `${n2}`,
+        },
+      })
+      }
+      />
       <StatusBar style="auto" />
     </View>
   );
@@ -47,5 +51,16 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  input: {
+    width: '80%',
+    borderWidth: 1,
+    borderColor: '#ccc',
+    backgroundColor: '#fff',
+    borderRadius: 8,
+    paddingHorizontal: 12,
+    paddingVertical: 10,
+    marginBottom: 20,
+    fontSize: 16,
   },
 });
