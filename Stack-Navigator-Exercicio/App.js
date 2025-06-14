@@ -27,7 +27,7 @@ export default function App() {
       }}
     >
       
-        <Stack.Screen name='Home' component={Home}options={{ title: '🏠 Compras' }}
+        <Stack.Screen name='Home' component={Home}options={{ title: '🏠 Lanchonete da Maria' }}
   />
         <Stack.Screen name='Pagamento' component={Pagamento}       options={{ title: '💳 Pagamento' }}
  />

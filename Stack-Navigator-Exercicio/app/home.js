@@ -4,16 +4,16 @@ import { useState } from 'react';
 
 
 
-const Home = () => {
+const Home = ({navigation}) => {
     const [coca, setCoca ] = useState(0);
     const [batata, setBatata ] = useState(0);
     const [hamg, setHamg ] = useState(0);
-    const [total, seTotal] = useState(0);
 
+    let total = (coca *7) + (batata*9.5) + (hamg * 15);
 
     return (
         <View style={styles.container}>
-            <Text style={styles.name} >Consumo</Text>
+            <Text  style={styles.botaoTexto2} >Consumo</Text>
             <View style={styles.label}>
                 <Image source={{ uri: 'https://th.bing.com/th/id/R.9ddd505bf89a46acac75dcf902f6e436?rik=w%2bEfZuu3fxxMpA&pid=ImgRaw&r=0' }}
                     style={{ width: 90, height: 90, borderRadius: 15 }} />
@@ -21,7 +21,7 @@ const Home = () => {
                     <Text style={styles.botaoTexto}>+</Text>
                 </TouchableOpacity>
                 <Text>{coca}</Text>
-                <TouchableOpacity style={styles.botao} onPress={()=> setCoca(coca-1)}>
+                <TouchableOpacity style={styles.botao} onPress={()=> setCoca(prev => Math.max(0, prev - 1))}>
                     <Text style={styles.botaoTexto}>-</Text>
                 </TouchableOpacity>
             </View>
@@ -32,7 +32,7 @@ const Home = () => {
                     <Text style={styles.botaoTexto}>+</Text>
                 </TouchableOpacity>
                 <Text>{batata}</Text>
-                <TouchableOpacity style={styles.botao} onPress={()=> setBatata(batata-1)} >
+                <TouchableOpacity style={styles.botao} onPress={()=> setBatata(prev => Math.max(0, prev - 1))} >
                     <Text style={styles.botaoTexto}>-</Text>
                 </TouchableOpacity>
             </View>
@@ -43,19 +43,18 @@ const Home = () => {
                     <Text style={styles.botaoTexto}>+</Text>
                 </TouchableOpacity>
                 <Text>{hamg}</Text>
-                <TouchableOpacity style={styles.botao} onPress={()=> setHamg(hamg-1)}>
+                <TouchableOpacity style={styles.botao} onPress={()=> setHamg(prev => Math.max(0, prev - 1))}>
                     <Text style={styles.botaoTexto}>-</Text>
                 </TouchableOpacity>
             </View>
 
             <View style={styles.totalView}>
-                <Text>R$ </Text>
-
-
+                <Text style={styles.botaoTexto}>R$ {total} </Text>
             </View>
 
-            
-
+            <TouchableOpacity style={styles.botao2} onPress={()=>navigation.navigate('Pagamento', { total : total })}>
+                    <Text style={styles.botaoTexto2}>Pagamento</Text>
+                </TouchableOpacity>
             <StatusBar style="auto" />
         </View>
     );
@@ -69,6 +68,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
+        gap : 40
+
     },
     botao: {
         backgroundColor: '#ADD8E6',
@@ -78,8 +79,23 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
+    botao2: {
+        backgroundColor: '#ADD8E6',
+        width: 300,
+        height: 45,
+        borderRadius: 15,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    botaoTexto2 : {
+        fontSize : 25,
+        fontWeight : 'bold'
+
+    },
     botaoTexto: {
-        color: '#fff'
+        color: '#fff',
+        fontSize : 25,
+        fontWeight : 'bold'
     },
 
     label: {
@@ -91,5 +107,9 @@ const styles = StyleSheet.create({
     },
     totalView :{
         backgroundColor: '#ADD8E6',
+        width: 250,
+        height: 45,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
 });
