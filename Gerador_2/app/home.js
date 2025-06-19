@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, TouchableOpacity, Modal } from 'react-native';
 import Slider, { MarkerProps, SliderProps } from '@react-native-community/slider';
 import { useState } from 'react';
-import { ModalSenha } from "./components/modal";
+import { ModalSenha } from "../components/modal";
 
 let charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
 
@@ -24,7 +24,7 @@ export default function App() {
   }
   return (
     <View style={styles.container}>
-      <Image source={require('./src/assets/logo (1).png')}
+      <Image source={require('../src/assets/logo (1).png')}
         style={styles.logo}
       />
       <Text style={styles.title}>{size} caracteres</Text>
